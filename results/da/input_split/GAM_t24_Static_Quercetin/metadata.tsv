@@ -1,0 +1,7 @@
+sample_id	treatment	condition	medium	time	stirred	replicate
+repBC25_Pl2	Quercetin	case	GAM	24	Static	R1
+repBC26_Pl2	Quercetin	case	GAM	24	Static	R2
+repBC27_Pl2	Quercetin	case	GAM	24	Static	R3
+repBC31_Pl2	DMSOControl	ctrl	GAM	24	Static	R1
+repBC32_Pl2	DMSOControl	ctrl	GAM	24	Static	R2
+repBC33_Pl2	DMSOControl	ctrl	GAM	24	Static	R3

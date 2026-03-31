@@ -1,0 +1,7 @@
+sample_id	treatment	condition	medium	time	stirred	replicate
+repBC61_Pl1	Quercetin	case	Schaedler	48	Static	R1
+repBC62_Pl1	Quercetin	case	Schaedler	48	Static	R2
+repBC63_Pl1	Quercetin	case	Schaedler	48	Static	R3
+repBC67_Pl1	DMSOControl	ctrl	Schaedler	48	Static	R1
+repBC68_Pl1	DMSOControl	ctrl	Schaedler	48	Static	R2
+repBC69_Pl1	DMSOControl	ctrl	Schaedler	48	Static	R3

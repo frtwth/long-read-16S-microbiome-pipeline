@@ -1,0 +1,7 @@
+sample_id	treatment	condition	medium	time	stirred	replicate
+repBC28_Pl2	CGA	case	GAM	24	Static	R1
+repBC29_Pl2	CGA	case	GAM	24	Static	R2
+repBC30_Pl2	CGA	case	GAM	24	Static	R3
+repBC34_Pl2	WaterControl	ctrl	GAM	24	Static	R1
+repBC35_Pl2	WaterControl	ctrl	GAM	24	Static	R2
+repBC36_Pl2	WaterControl	ctrl	GAM	24	Static	R3

@@ -1,0 +1,7 @@
+sample_id	treatment	condition	medium	time	stirred	replicate
+repBC34_Pl1	CGA	case	Schaedler	24	Static	R1
+repBC35_Pl1	CGA	case	Schaedler	24	Static	R2
+repBC36_Pl1	CGA	case	Schaedler	24	Static	R3
+repBC40_Pl1	WaterControl	ctrl	Schaedler	24	Static	R1
+repBC41_Pl1	WaterControl	ctrl	Schaedler	24	Static	R2
+repBC42_Pl1	WaterControl	ctrl	Schaedler	24	Static	R3

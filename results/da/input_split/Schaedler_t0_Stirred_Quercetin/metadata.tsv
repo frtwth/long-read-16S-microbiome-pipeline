@@ -1,0 +1,7 @@
+sample_id	treatment	condition	medium	time	stirred	replicate
+repBC16_Pl1	Quercetin	case	Schaedler	0	Stirred	R1
+repBC17_Pl1	Quercetin	case	Schaedler	0	Stirred	R2
+repBC18_Pl1	Quercetin	case	Schaedler	0	Stirred	R3
+repBC22_Pl1	DMSOControl	ctrl	Schaedler	0	Stirred	R1
+repBC23_Pl1	DMSOControl	ctrl	Schaedler	0	Stirred	R2
+repBC24_Pl1	DMSOControl	ctrl	Schaedler	0	Stirred	R3

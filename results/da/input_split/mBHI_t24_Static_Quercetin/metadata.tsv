@@ -1,0 +1,7 @@
+sample_id	treatment	condition	medium	time	stirred	replicate
+repBC19_Pl3	Quercetin	case	mBHI	24	Static	R1
+repBC20_Pl3	Quercetin	case	mBHI	24	Static	R2
+repBC21_Pl3	Quercetin	case	mBHI	24	Static	R3
+repBC25_Pl3	DMSOControl	ctrl	mBHI	24	Static	R1
+repBC26_Pl3	DMSOControl	ctrl	mBHI	24	Static	R2
+repBC27_Pl3	DMSOControl	ctrl	mBHI	24	Static	R3

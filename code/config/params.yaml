@@ -1,0 +1,244 @@
+#### ode by S. Jang
+##### Last updated: 2026-03-27
+##### Code definition: Configuration parameters for 16S_rRNA_metagenomics analysis
+
+project:
+  name : "16S_rRNA_metagenomics"
+  root : "/Users/celina/Desktop/project/16s_metagenomics_longread/"
+
+alpha_diversity:
+  dir_in_rel:
+    counts: "data/counts/emu-combined-abundance-genus-counts.tsv"
+    metadata: "data/metadata/metadata.df.rds"
+  dir_out_rel: "results/alpha"
+
+  metrics:
+    - "shannon"
+    - "simpson"
+    - "richness"
+    - "evenness"
+
+  sample_id_col: "sample_id"
+  tax_col: "genus"
+
+  output_files:
+    alpha_table: "alpha_diversity_genus.csv"
+    alpha_rds: "alpha_diversity_genus.rds"
+    depth_table: "sample_total_counts.csv" 
+
+beta_diversity:
+  dir_in_rel:
+    abundance: "data/abundance/emu-combined-abundance-genus.tsv"
+    metadata: "data/metadata/metadata.df.rds"
+  dir_out_rel: "results/beta"
+
+  sample_id_col: "sample_id"
+  tax_col: "genus"
+
+  abundance_filter:
+    min_abundance: 0.0001
+    renormalize: true
+
+  distance:
+    method: "bray"
+
+  permanova:
+    formula: "medium + treatment + time + stirred"
+    by: "margin"
+    permutations: 999
+
+  dispersion:
+    group_vars:
+      - "medium"
+      - "time"
+      - "stirred"
+      - "treatment"
+    permutations: 999
+
+  ordination:
+    method: "pcoa"
+    k: 2
+    add: "lingoes"
+
+  output_files:
+    beta_rds: "beta_diversity_genus.rds"
+
+beta_diversity_fecesonly:
+  dir_in_rel:
+    abundance: "data/abundance/emu-combined-abundance-genus.tsv"
+    metadata: "data/metadata/metadata.df.rds"
+  dir_out_rel: "results/beta"
+
+  sample_id_col: "sample_id"
+  tax_col: "genus"
+
+  subset:
+    subset_col: "treatment"
+    subset_value: "FecesOnly"
+
+  abundance_filter:
+    min_abundance: 0.0001
+    renormalize: true
+
+  distance:
+    method: "bray"
+
+  permanova:
+    formula: "medium + time + stirred"
+    by: "margin"
+    permutations: 999
+
+  dispersion:
+    group_vars:
+      - "medium"
+      - "time"
+      - "stirred"
+    permutations: 999
+
+  ordination:
+    method: "pcoa"
+    k: 2
+    add: "lingoes"
+
+  random_seed: 2026
+
+  output_files:
+    beta_rds: "beta_diversity_genus_fecesonly.rds"
+
+da_split:
+  dir_in_rel:
+    counts: "data/counts/emu-combined-abundance-genus-counts.tsv"
+    metadata: "data/metadata/metadata.df.rds"
+
+  dir_out_rel:
+    split: "results/da/input_split"
+    summary: "results/da/summary"
+
+  sample_id_col: "sample_id"
+  tax_col: "genus"
+
+  comparison_pairs:
+    CGA:
+      control: "WaterControl"
+      treatment: "CGA"
+    Quercetin:
+      control: "DMSOControl"
+      treatment: "Quercetin"
+
+  grouping_vars:
+    - "medium"
+    - "time"
+    - "stirred"
+
+  metadata_cols:
+    - "sample_id"
+    - "treatment"
+    - "condition"
+    - "medium"
+    - "time"
+    - "stirred"
+    - "replicate"
+
+  output_files:
+    counts: "counts.tsv"
+    metadata: "metadata.tsv"
+    manifest: "comparison_manifest.csv"
+    skipped: "skipped_comparisons.csv"
+
+da_analysis:
+  dir_in_rel: "results/da/input_split"
+
+  dir_out_rel:
+    tables: "results/da/da_tables"
+    summary: "results/da/summary"
+
+  sample_id_col: "sample_id"
+  tax_col: "genus"
+  condition_col: "condition"
+
+  filtering:
+    min_total_count: 10
+    min_taxa_after_filter: 2
+    round_counts: true
+
+  deseq2:
+    design: "~ condition"
+
+  output_files:
+    counts: "counts.tsv"
+    metadata: "metadata.tsv"
+    deseq2_results: "deseq2_results.csv"
+    sig_padj_005: "sig_padj0.05.csv"
+    sig_padj_001: "sig_padj0.01.csv"
+    normalized_counts: "normalized_counts.tsv"
+    size_factors: "size_factors.csv"
+    summary_table: "DA_summary_table.csv"
+    skipped_table: "DA_skipped_comparisons.csv"
+
+da_heatmap:
+  dir_in_rel: "results/da/da_tables"
+  dir_out_rel: "results/da/heatmap_data"
+
+  tax_col: "genus"
+
+  required_cols:
+    - "genus"
+    - "log2FoldChange"
+    - "stat"
+    - "padj"
+
+  compound_levels:
+    - "Quercetin"
+    - "CGA"
+
+  medium_levels:
+    - "GAM"
+    - "mBHI"
+    - "Schaedler"
+
+  time_levels:
+    - "0"
+    - "24"
+    - "48"
+
+  agitation_levels:
+    - "Static"
+    - "Stirred"
+
+  significance:
+    padj_main: 0.05
+    padj_strict: 0.01
+
+  output_files:
+    heatmap_all: "heatmap_data_all.csv"
+
+    selected_genera_quercetin: "selected_genera_quercetin.csv"
+    heatmap_quercetin: "heatmap_data_quercetin.csv"
+    genus_order_quercetin: "genus_order_quercetin.csv"
+
+    selected_genera_cga: "selected_genera_cga.csv"
+    heatmap_cga: "heatmap_data_cga.csv"
+    genus_order_cga: "genus_order_cga.csv"
+
+    skipped: "heatmap_prepare_skipped.csv"
+
+figures:
+
+  alpha_diversity:
+    dir_in_rel:
+      alpha_rds: "results/alpha/alpha_diversity_genus.rds"
+    dir_out_rel: "results/figures/alpha"
+
+  beta_diversity:
+    dir_in_rel:
+      beta_rds: "results/beta/beta_diversity_genus.rds"
+      beta_rds_fecesonly: "results/beta/beta_diversity_genus_fecesonly.rds"
+    dir_out_rel:
+      figures: "results/figures/beta"
+      tables: "results/tables/beta"
+
+  da_analysis:
+    dir_in_rel:
+      heatmap_data: "results/da/heatmap_data"
+      taxonomy: "data/taxonomy/emu-combined-taxonomy-genus.tsv"
+    dir_out_rel: "results/figures/da"

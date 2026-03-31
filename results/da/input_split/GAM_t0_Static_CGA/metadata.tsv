@@ -1,0 +1,7 @@
+sample_id	treatment	condition	medium	time	stirred	replicate
+repBC94_Pl1	CGA	case	GAM	0	Static	R1
+repBC95_Pl1	CGA	case	GAM	0	Static	R2
+repBC96_Pl1	CGA	case	GAM	0	Static	R3
+repBC04_Pl2	WaterControl	ctrl	GAM	0	Static	R1
+repBC05_Pl2	WaterControl	ctrl	GAM	0	Static	R2
+repBC06_Pl2	WaterControl	ctrl	GAM	0	Static	R3

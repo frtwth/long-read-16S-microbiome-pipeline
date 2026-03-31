@@ -1,0 +1,7 @@
+sample_id	treatment	condition	medium	time	stirred	replicate
+repBC70_Pl2	Quercetin	case	GAM	48	Stirred	R1
+repBC71_Pl2	Quercetin	case	GAM	48	Stirred	R2
+repBC72_Pl2	Quercetin	case	GAM	48	Stirred	R3
+repBC76_Pl2	DMSOControl	ctrl	GAM	48	Stirred	R1
+repBC77_Pl2	DMSOControl	ctrl	GAM	48	Stirred	R2
+repBC78_Pl2	DMSOControl	ctrl	GAM	48	Stirred	R3
