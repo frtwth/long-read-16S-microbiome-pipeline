@@ -71,7 +71,7 @@ Rscript scripts/step06_prepare_heatmap_data.R
 
 ---
 
-### Additional analyses
+### Additional analyses + visualization
 
 4. Phylum-level community composition
 ```
