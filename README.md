@@ -71,7 +71,7 @@ Rscript scripts/step06_prepare_heatmap_data.R
 
 ---
 
-### Additional analyses + visualization
+### Additional analyses
 
 4. Phylum-level community composition
 ```
@@ -85,7 +85,7 @@ Rscript scripts/plot/plot_fb_ratio.R
 
 ---
 
-### Optional visualization
+### Visualization scripts
 
 ```
 Rscript scripts/plot/plot_alpha_diversity.R
