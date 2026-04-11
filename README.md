@@ -59,6 +59,7 @@ Rscript scripts/step01_alpha_diversity.R
 2. Beta diversity
 ```
 Rscript scripts/step02_beta_diversity.R
+Rscript scripts/step03_beta_diversity_fecesonly.R
 ```
 
 3. Differential abundance
