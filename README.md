@@ -89,6 +89,7 @@ Rscript scripts/plot/plot_fb_ratio.R
 ```
 Rscript scripts/plot/plot_alpha_diversity.R
 Rscript scripts/plot/plot_beta_diversity.R
+Rscript scripts/plot/plot_beta_diversity_fecesonly.R
 Rscript scripts/plot/plot_da_analysis.R
 ```
 
