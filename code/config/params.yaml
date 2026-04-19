@@ -1,10 +1,10 @@
-#### ode by S. Jang
-##### Last updated: 2026-03-27
+##### Code by S. Jang
+##### Last updated: 2026-04-17
 ##### Code definition: Configuration parameters for 16S_rRNA_metagenomics analysis
 
 project:
   name : "16S_rRNA_metagenomics"
-  root : "/Users/jsy/Desktop/project/16s_metagenomics_longread/"
+  root : "/Users/celina/Desktop/project/16s_metagenomics_longread/"
 
 alpha_diversity:
   dir_in_rel:
@@ -242,3 +242,17 @@ figures:
       heatmap_data: "results/da/heatmap_data"
       taxonomy: "data/taxonomy/emu-combined-taxonomy-genus.tsv"
     dir_out_rel: "results/figures/da"
+
+  phylum_composition:
+    dir_in_rel:
+      abundance_phylum: "data/abundance/emu-combined-abundance-phylum.tsv"
+      metadata: "data/metadata/metadata.df.rds"
+    dir_out_rel: "results/figures/composition"
+
+  fb_ratio_phylum:
+    dir_in_rel:
+      abundance_phylum: "data/abundance/emu-combined-abundance-phylum.tsv"
+      metadata: "data/metadata/metadata.df.rds"
+    dir_out_rel:
+      figures: "results/figures/composition"
+      tables: "results/tables/composition"
